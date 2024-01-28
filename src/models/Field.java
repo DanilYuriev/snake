@@ -83,7 +83,7 @@ public class Field {
             obstacleY = generateRandomY();
         } while (cells[obstacleX][obstacleY] != CellTypes.Empty);
 
-        cells[obstacleX][obstacleY] = CellTypes.Obstacle;
+        cells[obstacleX][obstacleY] = CellTypes.Obstacle;`
         obstaclesX.add(obstacleX);
         obstaclesY.add(obstacleY);
     }

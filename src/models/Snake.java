@@ -82,7 +82,6 @@ public class Snake {
     public void setHasChangedDirections(boolean hasChangedDirections) {
         this.hasChangedDirections = hasChangedDirections;
     }
-    // FIXME убрать смерть о невидимый конец хвоста
     public void move(boolean hasEatenFood) {
         if (hasEatenFood) {
             increaseLength();
