@@ -1,24 +1,110 @@
 package models;
 
+/**
+ * Класс Snake представляет собой модель змеи.
+ */
 public class Snake {
-    private int length;
+    private int[] bodyCellsX;
+
+    /**
+     * Получить значение поля bodyCellsX.
+     * @return Массив с Х-координатами туловища змеи.
+     */
+    public int[] getBodyCellsX() {
+        return bodyCellsX;
+    }
+
+    private int[] bodyCellsY;
+
+    /**
+     * Получить значение поля bodyCellsY.
+     * @return Массив с Y-координатами туловища змеи.
+     */
+    public int[] getBodyCellsY() {
+        return bodyCellsY;
+    }
+
     private Directions direction;
 
-    private int headX;
-    private int headY;
+    /**
+     * Получить значение поля direction.
+     * @return Текущее направление змеи.
+     */
+    public Directions getDirection() {
+        return direction;
+    }
 
-    private int[] bodyCellsX;
-    private int[] bodyCellsY;
+    /**
+     * Задать значение поля direction.
+     * @param direction Текущее направление змеи.
+     */
+    public void setDirection(Directions direction) {
+        this.direction = direction;
+    }
 
     private boolean hasChangedDirections;
 
+    /**
+     * Получить значение поля hasChangedDirections.
+     * @return Изменилось ли направление движения змеи.
+     */
+    public boolean getHasChangedDirections() {
+        return hasChangedDirections;
+    }
+
+    /**
+     * Задать значение поля hasChangedDirections.
+     * @param hasChangedDirections Изменилось ли направление движения змеи.
+     */
+    public void setHasChangedDirections(boolean hasChangedDirections) {
+        this.hasChangedDirections = hasChangedDirections;
+    }
+
+    private int headX;
+
+    /**
+     * Получить значение поля headX.
+     * @return Х-координата головы змеи.
+     */
+    public int getHeadX() {
+        return headX;
+    }
+
+    private int headY;
+
+    /**
+     * Получить значение поля headY.
+     * @return Y-координата головы змеи.
+     */
+    public int getHeadY() {
+        return headY;
+    }
+
+    private int length;
+
+    /**
+     * Получить значение поля length.
+     * @return Длина змеи.
+     */
+    public int getLength() {
+        return length;
+    }
+
+    /**
+     * Создать экземпляр змеи.
+     * @param startingCellX Х-координата начальной позиции змеи на поле.
+     * @param startingCellY Y-координата начальной позиции змеи на поле.
+     * @param startingLength Начальная длина змеи.
+     */
     public Snake(int startingCellX, int startingCellY, int startingLength) {
         length = startingLength;
+
+        bodyCellsX = new int[length - 1];
+        bodyCellsY = new int[length - 1];
         direction = Directions.Up;
         headX = startingCellX;
         headY = startingCellY;
-        bodyCellsX = new int[length - 1];
-        bodyCellsY = new int[length - 1];
+
         for (int i = 0; i < bodyCellsX.length; i++) {
             bodyCellsX[i] = headX;
             if (i == 0) {
@@ -27,29 +113,12 @@ public class Snake {
                 bodyCellsY[i] = bodyCellsY[i - 1] + 1;
             }
         }
-        System.out.printf("Змейка появилась в клетке: %d, %d%n", headX, headY);
     }
 
-    public Directions getDirection() {
-        return direction;
-    }
-
-    public void setDirection(Directions direction) {
-        this.direction = direction;
-    }
-
-    public int getHeadX() {
-        return headX;
-    }
-
-    public int getHeadY() {
-        return headY;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
+    /**
+     * Получить новые координаты головы змеи.
+     * @return Массив координат головы в формате [Х, Y].
+     */
     public int[] getNewHeadCoordinates() {
         int[] headCoords = new int[2];
         if (direction == Directions.Right) {
@@ -67,21 +136,11 @@ public class Snake {
         }
         return headCoords;
     }
-    public int[] getBodyCellsX() {
-        return bodyCellsX;
-    }
 
-    public int[] getBodyCellsY() {
-        return bodyCellsY;
-    }
-
-    public boolean getHasChangedDirections() {
-        return hasChangedDirections;
-    }
-
-    public void setHasChangedDirections(boolean hasChangedDirections) {
-        this.hasChangedDirections = hasChangedDirections;
-    }
+    /**
+     * Выполнить передвижение змеи.
+     * @param hasEatenFood Была ли съедена еда в этом ходе.
+     */
     public void move(boolean hasEatenFood) {
         if (hasEatenFood) {
             increaseLength();
@@ -93,13 +152,14 @@ public class Snake {
         }
         bodyCellsX[0] = headX;
         bodyCellsY[0] = headY;
+
         int[] newHeadCoordinates = getNewHeadCoordinates();
         headX = newHeadCoordinates[0];
         headY = newHeadCoordinates[1];
     }
 
     private void increaseLength() {
-        length = length + 1;
+        length++;
         int[] newBodyCellsX = new int[length - 1];
         int[] newBodyCellsY = new int[length - 1];
 
@@ -111,6 +171,4 @@ public class Snake {
         bodyCellsX = newBodyCellsX;
         bodyCellsY = newBodyCellsY;
     }
-
-
 }

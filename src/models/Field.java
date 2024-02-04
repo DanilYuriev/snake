@@ -1,38 +1,102 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
+/**
+ * Класс Field представляет собой модель игрового поля.
+ */
 public class Field {
+    private final CellTypes[][] cells;
+
     private final int height;
+
+    /**
+     * Получить значение поля height.
+     * @return Высота игрового поля.
+     */
+    public int getHeight() {
+        return height;
+    }
+
+    private final ArrayList<Integer> obstaclesX;
+
+    /**
+     * Получить значение поля obstaclesX.
+     * @return Список Х-координат препятствий.
+     */
+    public ArrayList<Integer> getObstaclesX() { return obstaclesX; }
+
+    private final ArrayList<Integer> obstaclesY;
+
+    /**
+     * Получить значение поля obstaclesY.
+     * @return Список Y-координат препятствий.
+     */
+    public ArrayList<Integer> getObstaclesY() { return obstaclesY; }
+
+    private final Snake snake;
+
+    /**
+     * Получить значение поля snake.
+     * @return Змея.
+     */
+    public Snake getSnake() { return snake; }
+
     private final int width;
+
+    /**
+     * Получить значение поля width.
+     * @return Ширина игрового поля.
+     */
+    public int getWidth() {
+        return width;
+    }
+
     private int foodX;
+
+    /**
+     * Получить значение поля foodX.
+     * @return Х-координата еды.
+     */
+    public int getFoodX() { return foodX; }
+
     private int foodY;
 
-    private ArrayList<Integer> obstaclesX;
-    private ArrayList<Integer> obstaclesY;
-    private CellTypes[][] cells;
+    /**
+     * Получить значение поля foodY.
+     * @return Y-координата еды.
+     */
+    public int getFoodY() { return foodY; }
 
-    private Snake snake;
-
+    /**
+     * Создать экземпляр игрового поля.
+     * @param snake Змея.
+     * @param height Высота игрового поля (в клетках).
+     * @param width Ширина игрового поля (в клетках).
+     */
     public Field(Snake snake, int height, int width) {
+        this.snake = snake;
         this.height = height;
         this.width = width;
+
         obstaclesX = new ArrayList<>();
         obstaclesY = new ArrayList<>();
+
         cells = new CellTypes[height][width];
-        for (int i = 0; i < cells.length; i++) {
-            for (int j = 0; j < cells[i].length; j++) {
-                cells[i][j] = CellTypes.Empty;
-            }
+        for (CellTypes[] cell : cells) {
+            Arrays.fill(cell, CellTypes.Empty);
         }
-        this.snake = snake;
+
         cells[snake.getHeadX()][snake.getHeadY()] = CellTypes.Snake;
         for (int i = 0; i < snake.getBodyCellsX().length; i++) {
             cells[snake.getBodyCellsX()[i]][snake.getBodyCellsY()[i]] = CellTypes.Snake;
         }
-        System.out.println("Поле создалось.");
     }
 
+    /**
+     * Заполнить клетки игрового поля в соответствии с текущими типами клеток.
+     */
     public void fillCellTypes() {
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[i].length; j++) {
@@ -57,6 +121,34 @@ public class Field {
         }
     }
 
+    /**
+     * Получить тип клетки игрового поля по её координатам.
+     * @param coords Координаты клетки игрового поля.
+     * @return Тип клетки игрового поля.
+     */
+    public CellTypes getCellType(int[] coords) {
+        if (coords[0] >= height || coords[0] < 0) {
+            return CellTypes.Wall;
+        }
+
+        if (coords[1] >= width || coords[1] < 0) {
+            return CellTypes.Wall;
+        }
+
+        int[] tailX = snake.getBodyCellsX();
+        int[] tailY = snake.getBodyCellsY();
+        for (int i = 0; i < snake.getLength() - 1; i++) {
+            if (coords[0] == tailX[i] && coords[1] == tailY[i]) {
+                return CellTypes.Snake;
+            }
+        }
+
+        return cells[coords[0]][coords[1]];
+    }
+
+    /**
+     * Создать еду на игровом поле.
+     */
     public void spawnFood() {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
@@ -74,6 +166,9 @@ public class Field {
         cells[foodX][foodY] = CellTypes.Food;
     }
 
+    /**
+     * Создать препятствие на игровом поле.
+     */
     public void spawnObstacles() {
         int obstacleX;
         int obstacleY;
@@ -83,43 +178,10 @@ public class Field {
             obstacleY = generateRandomY();
         } while (cells[obstacleX][obstacleY] != CellTypes.Empty);
 
-        cells[obstacleX][obstacleY] = CellTypes.Obstacle;`
+        cells[obstacleX][obstacleY] = CellTypes.Obstacle;
         obstaclesX.add(obstacleX);
         obstaclesY.add(obstacleY);
     }
-
-    public CellTypes getCellType(int[] coords) {
-        if (coords[0] >= height || coords[0] < 0) {
-            return CellTypes.Wall;
-        }
-        if (coords[1] >= width || coords[1] < 0) {
-            return CellTypes.Wall;
-        }
-
-        int[] tailX = snake.getBodyCellsX();
-        int[] tailY = snake.getBodyCellsY();
-        for (int i = 0; i < snake.getLength() - 1; i++) {
-            if (coords[0] == tailX[i] && coords[1] == tailY[i]) {
-                return CellTypes.Snake;
-            }
-        }
-
-        return cells[coords[0]][coords[1]];
-    }
-
-    public int getWidth() {
-        return width;
-    }
-    public int getHeight() {
-        return height;
-    }
-    public int getFoodX() { return foodX; }
-    public int getFoodY() { return foodY; }
-
-    public ArrayList<Integer> getObstaclesX() { return obstaclesX; }
-    public ArrayList<Integer> getObstaclesY() { return obstaclesY; }
-
-    public Snake getSnake() { return snake; }
 
     private int generateRandomX() {
         return (int) ((Math.random() * height));

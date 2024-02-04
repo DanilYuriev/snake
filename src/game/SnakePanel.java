@@ -14,18 +14,19 @@ public class SnakePanel extends JPanel implements ActionListener, Game.LevelUpCa
     private static final int FIELD_SIZE = SCREEN_HEIGHT/UNIT_SIZE;
     private static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/UNIT_SIZE;
     private boolean isRunning = false;
-
+    private SnakeColor currentSnakeColor;
     private Timer timer;
 
     private final Game game;
 
-    public SnakePanel(Game game) {
+    public SnakePanel(Game game, SnakeColor snakeColor, Color backgroundColor) {
         this.game = game;
+        this.currentSnakeColor = snakeColor;
         game.registerLevelUpCallback(this);
         this.addKeyListener(new SnakeKeyAdapter(game));
         this.game.start(FIELD_SIZE, FIELD_SIZE);
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
-        this.setBackground(new Color(27, 27, 27));
+        this.setBackground(backgroundColor);
         this.setFocusable(true);
         isRunning = true;
         timer = new Timer(game.getPeriod(), this);
@@ -52,11 +53,11 @@ public class SnakePanel extends JPanel implements ActionListener, Game.LevelUpCa
         g.setColor(Color.red);
         g.fillOval(game.getField().getFoodX() * UNIT_SIZE, game.getField().getFoodY() * UNIT_SIZE, UNIT_SIZE, UNIT_SIZE);
 
-        g.setColor(new Color(35, 161, 64));
+        g.setColor(currentSnakeColor.getHead());
         g.fillRect(game.getField().getSnake().getHeadX() * UNIT_SIZE, game.getField().getSnake().getHeadY() * UNIT_SIZE, UNIT_SIZE, UNIT_SIZE);
 
         for (int i = 0; i < game.getField().getSnake().getLength() - 1; i++) {
-            g.setColor(new Color(35, 220, 86));
+            g.setColor(currentSnakeColor.getBody());
             g.fillRect(game.getField().getSnake().getBodyCellsX()[i] * UNIT_SIZE, game.getField().getSnake().getBodyCellsY()[i] * UNIT_SIZE, UNIT_SIZE, UNIT_SIZE);
         }
 

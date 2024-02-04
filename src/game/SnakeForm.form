@@ -7,6 +7,17 @@
     </constraints>
     <properties/>
     <border type="none"/>
-    <children/>
+    <children>
+      <component id="3d660" class="javax.swing.JTextField" binding="asdasdTextField" default-binding="true">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="70"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="asdasd"/>
+        </properties>
+      </component>
+    </children>
   </grid>
 </form>
