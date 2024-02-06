@@ -7,44 +7,57 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Класс SnakePanel отвечает за отображение игрового поля.
+ */
 public class SnakePanel extends JPanel implements ActionListener, Game.LevelUpCallback {
-    private static final int SCREEN_WIDTH = 660;
     private static final int SCREEN_HEIGHT = 660;
+    private static final int SCREEN_WIDTH = 660;
     private static final int UNIT_SIZE = 60;
     private static final int FIELD_SIZE = SCREEN_HEIGHT/UNIT_SIZE;
-    private static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/UNIT_SIZE;
+    private final SnakeColor currentSnakeColor;
+    private final Game game;
     private boolean isRunning = false;
-    private SnakeColor currentSnakeColor;
     private Timer timer;
 
-    private final Game game;
-
+    /**
+     * Создать экземпляр интерфейса игрового поля.
+     * @param game Экземпляр текущей игры.
+     * @param snakeColor Цвет змеи.
+     * @param backgroundColor Цвет фона.
+     */
     public SnakePanel(Game game, SnakeColor snakeColor, Color backgroundColor) {
-        this.game = game;
-        this.currentSnakeColor = snakeColor;
         game.registerLevelUpCallback(this);
-        this.addKeyListener(new SnakeKeyAdapter(game));
-        this.game.start(FIELD_SIZE, FIELD_SIZE);
-        this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
+        this.game = game;
+
         this.setBackground(backgroundColor);
+        this.currentSnakeColor = snakeColor;
+        this.addKeyListener(new SnakeKeyAdapter(game));
+        this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
         this.setFocusable(true);
-        isRunning = true;
+
+        this.game.start(FIELD_SIZE, FIELD_SIZE);
         timer = new Timer(game.getPeriod(), this);
         timer.start();
+        isRunning = true;
     }
 
+    /**
+     * Обработчик события завершения хода игры.
+     * @param e the event to be processed.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (isRunning){
+        if (isRunning) {
             isRunning = game.doStep();
-
         }
         repaint();
     }
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        draw(g);
-    }
+
+    /**
+     * Прорисовка интерфейса игрового поля.
+     * @param g Графический компонет игрового поля.
+     */
     public void draw(Graphics g) {
         for (int i = 0; i < SCREEN_HEIGHT/UNIT_SIZE; i++) {
             g.drawLine(i * UNIT_SIZE, 0, i * UNIT_SIZE, SCREEN_HEIGHT);
@@ -67,10 +80,22 @@ public class SnakePanel extends JPanel implements ActionListener, Game.LevelUpCa
         }
     }
 
+    /**
+     * Обработчик события повышения уровня сложности игры.
+     */
     @Override
     public void onLevelUp() {
         timer.stop();
         timer = new Timer(game.getPeriod(), this);
         timer.start();
+    }
+
+    /**
+     * Отрисовка графического компонента.
+     * @param g the <code>Graphics</code> object to protect
+     */
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        draw(g);
     }
 }
