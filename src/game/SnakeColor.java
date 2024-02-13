@@ -1,22 +1,10 @@
 package game;
 
-import javax.swing.*;
 import java.awt.*;
 
-public class SnakeColor {
-    private final Color head;
-    private final Color body;
-
-    public SnakeColor(Color head, Color body) {
-        this.head = head;
-        this.body = body;
-    }
-
-    public Color getHead() {
-        return head;
-    }
-    public Color getBody() {
-        return body;
-    }
-
-}
+/**
+ * SnakeColor хранит в себе информацию о цвете змеи.
+ * @param head Цвет головы.
+ * @param body Цвет тела.
+ */
+public record SnakeColor(Color head, Color body) { }

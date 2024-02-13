@@ -190,7 +190,6 @@ public class Game {
      */
     public interface GameOverCallback {
         void callingBack();
-
     }
 
     /**
@@ -212,6 +211,5 @@ public class Game {
      */
     public interface ScoreChangedCallback {
         void onScoreChange();
-
     }
 }
