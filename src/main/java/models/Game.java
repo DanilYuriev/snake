@@ -125,7 +125,7 @@ public class Game {
                 System.out.println("период: " + period);
             }
             if (needToSpawnObstacle()) {
-                field.spawnObstacles();
+                field.spawnObstacle();
             }
             field.spawnFood();
         } else if (newCellType == CellTypes.Empty) {

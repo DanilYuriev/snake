@@ -127,20 +127,8 @@ public class Field {
      * @return Тип клетки игрового поля.
      */
     public CellTypes getCellType(int[] coords) {
-        if (coords[0] >= height || coords[0] < 0) {
+        if (coords[0] >= height || coords[0] < 0 || coords[1] >= width || coords[1] < 0) {
             return CellTypes.Wall;
-        }
-
-        if (coords[1] >= width || coords[1] < 0) {
-            return CellTypes.Wall;
-        }
-
-        int[] tailX = snake.getBodyCellsX();
-        int[] tailY = snake.getBodyCellsY();
-        for (int i = 0; i < snake.getLength() - 1; i++) {
-            if (coords[0] == tailX[i] && coords[1] == tailY[i]) {
-                return CellTypes.Snake;
-            }
         }
 
         return cells[coords[0]][coords[1]];
@@ -169,7 +157,7 @@ public class Field {
     /**
      * Создать препятствие на игровом поле.
      */
-    public void spawnObstacles() {
+    public void spawnObstacle() {
         int obstacleX;
         int obstacleY;
 
