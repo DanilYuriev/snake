@@ -5,32 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c2f51ec-d5f4-4b82-b35e-1d8b51b786ef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/FieldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snakeApp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/GameInfoPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameOverPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/GameOverPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/MenuPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/SnakeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/SnakeColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/SnakeForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/SnakeForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/SnakeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/SnakeForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/SnakeKeyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/SnakeKeyAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/SnakePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/SnakePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/CellTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/CellTypes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Directions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Directions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Snake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,27 +33,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FieldTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SnakeTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SnakeTest.getNewHeadCoordinates_whenDirectionLeft_thenReturnNewHeadCoordinates.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SnakeTest.testMethod.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.FieldTest.executor": "Run",
+    "JUnit.GameTest.executor": "Run",
+    "JUnit.SnakeTest.executor": "Run",
+    "JUnit.SnakeTest.getNewHeadCoordinates_whenDirectionLeft_thenReturnNewHeadCoordinates.executor": "Run",
+    "JUnit.SnakeTest.testMethod.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.FieldTest">
+}]]></component>
+  <component name="RunManager" selected="JUnit.GameTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="snakeApp" />
@@ -88,6 +67,15 @@
       <module name="snakeApp" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FieldTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="snakeApp" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GameTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,23 +100,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SnakeTest.testMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="snakeApp" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SnakeTest" />
-      <option name="METHOD_NAME" value="testMethod" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GameTest" />
         <item itemvalue="JUnit.FieldTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SnakeTest" />
         <item itemvalue="JUnit.SnakeTest.getNewHeadCoordinates_whenDirectionLeft_thenReturnNewHeadCoordinates" />
-        <item itemvalue="JUnit.SnakeTest.testMethod" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +127,9 @@
       <updated>1708173112388</updated>
       <workItem from="1708173114110" duration="35000" />
       <workItem from="1708173259454" duration="8593000" />
-      <workItem from="1708182515847" duration="1670000" />
+      <workItem from="1708182515847" duration="1968000" />
+      <workItem from="1708184544072" duration="32000" />
+      <workItem from="1708258590847" duration="1835000" />
     </task>
     <servers />
   </component>
