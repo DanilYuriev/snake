@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c2f51ec-d5f4-4b82-b35e-1d8b51b786ef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/GameTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/MenuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/SnakePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/SnakePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GameTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GameTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,29 +36,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.FieldTest.executor": "Run",
-    "JUnit.GameTest.executor": "Run",
-    "JUnit.SnakeTest.executor": "Run",
-    "JUnit.SnakeTest.getNewHeadCoordinates_whenDirectionLeft_thenReturnNewHeadCoordinates.executor": "Run",
-    "JUnit.SnakeTest.testMethod.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FieldTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SnakeTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SnakeTest.getNewHeadCoordinates_whenDirectionLeft_thenReturnNewHeadCoordinates.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SnakeTest.testMethod.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.GameTest">
+}</component>
+  <component name="RunManager" selected="JUnit.SnakeTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="snakeApp" />
@@ -102,10 +105,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GameTest" />
-        <item itemvalue="JUnit.FieldTest" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SnakeTest" />
+        <item itemvalue="JUnit.FieldTest" />
+        <item itemvalue="JUnit.GameTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SnakeTest.getNewHeadCoordinates_whenDirectionLeft_thenReturnNewHeadCoordinates" />
       </list>
     </recent_temporary>
@@ -129,7 +132,9 @@
       <workItem from="1708173259454" duration="8593000" />
       <workItem from="1708182515847" duration="1968000" />
       <workItem from="1708184544072" duration="32000" />
-      <workItem from="1708258590847" duration="1835000" />
+      <workItem from="1708258590847" duration="2086000" />
+      <workItem from="1708263047446" duration="1639000" />
+      <workItem from="1708782779979" duration="6296000" />
     </task>
     <servers />
   </component>

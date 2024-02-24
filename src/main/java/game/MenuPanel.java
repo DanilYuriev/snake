@@ -492,7 +492,6 @@ public class MenuPanel extends JPanel {
     }
 
     private void parseLevel() {
-
         var levelString = levelField.getText();
         try {
             var level = Integer.parseInt(levelString);

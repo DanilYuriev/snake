@@ -67,11 +67,11 @@ public class SnakePanel extends JPanel implements ActionListener, Game.LevelUpCa
         g.fillOval(game.getField().getFoodX() * UNIT_SIZE, game.getField().getFoodY() * UNIT_SIZE, UNIT_SIZE, UNIT_SIZE);
 
         g.setColor(currentSnakeColor.head());
-        g.fillRect(game.getField().getSnake().getHeadX() * UNIT_SIZE, game.getField().getSnake().getHeadY() * UNIT_SIZE, UNIT_SIZE, UNIT_SIZE);
+        g.fillRect(game.getSnake().getHeadX() * UNIT_SIZE, game.getField().getSnake().getHeadY() * UNIT_SIZE, UNIT_SIZE, UNIT_SIZE);
 
-        for (int i = 0; i < game.getField().getSnake().getLength() - 1; i++) {
+        for (int i = 0; i < game.getSnake().getLength() - 1; i++) {
             g.setColor(currentSnakeColor.body());
-            g.fillRect(game.getField().getSnake().getBodyCellsX()[i] * UNIT_SIZE, game.getField().getSnake().getBodyCellsY()[i] * UNIT_SIZE, UNIT_SIZE, UNIT_SIZE);
+            g.fillRect(game.getSnake().getBodyCellsX()[i] * UNIT_SIZE, game.getField().getSnake().getBodyCellsY()[i] * UNIT_SIZE, UNIT_SIZE, UNIT_SIZE);
         }
 
         for (int i = 0; i < game.getField().getObstaclesX().size(); i++) {
